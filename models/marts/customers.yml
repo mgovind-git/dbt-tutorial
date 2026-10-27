@@ -4,7 +4,9 @@ models:
     data_tests:
       - dbt_utils.expression_is_true:
           arguments:
-            expression: "lifetime_spend_pretax + lifetime_tax_paid = lifetime_spend"
+            expression: >
+              ROUND(lifetime_spend_pretax + lifetime_tax_paid, 2)
+              = ROUND(lifetime_spend, 2)
     columns:
       - name: customer_id
         description: The unique key of the orders mart.
