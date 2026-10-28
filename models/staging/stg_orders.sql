@@ -1,3 +1,9 @@
+{{ config(
+    state={
+        "lag_tolerance": "10m",
+        "require_fresh_data_from": "any"
+    }
+) }}
 with
 
 source as (
